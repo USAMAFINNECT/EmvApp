@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId 'com.topwise.emvdemo'
+        minSdkVersion 18
+        targetSdkVersion 28
+        def cmd = 'git rev-list --count HEAD'
+        versionCode 1
+        versionName BUILD_VERSION
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("topwise.jks")
+            storePassword '123456'
+            keyAlias 'topwise'
+            keyPassword '123456'
+
+            v1SigningEnabled true
+            v2SigningEnabled false  // 目前不支持V2签名
+        }
+
+        debug {
+            storeFile file("topwise.jks")
+            storePassword '123456'
+            keyAlias 'topwise'
+            keyPassword '123456'
+
+            v1SigningEnabled true
+            v2SigningEnabled false  // 目前不支持V2签名
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".release"
+        }
+        debug {
+            signingConfig signingConfigs.debug //
+            zipAlignEnabled false
+            minifyEnabled false
+            versionNameSuffix "-beta"
+        }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def outputFile = output.outputFile
+            def fileName
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                fileName = "MP35P_EMVDemo_V${defaultConfig.versionName}_${releaseTime()}.apk"
+                outputFileName = fileName
+            }
+        }
+      }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation project(path: ':emv')
+    implementation project(path: ':USDK_2603')
+    testImplementation 'junit:junit:4.12'
+}
+
+def releaseTime() {
+    return new Date().format("yyyyMMddHH", TimeZone.getTimeZone("GMT+08"))
+}

@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="horizontal">
+
+    <include layout="@layout/left_scroll"/>
+
+    <LinearLayout
+        android:id="@+id/main_linearlayout"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    style="@style/leftbut"
+                    android:layout_marginTop="10dp"
+                    android:background="#00FDFD"
+                    android:id="@+id/download_param"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:enabled="true"
+                    android:text="download Params"/>
+
+                <Button
+                    style="@style/leftbut"
+                    android:layout_marginTop="10dp"
+                    android:background="#00FDFD"
+                    android:id="@+id/download_keys"
+                    android:onClick="onClick"
+                    android:enabled="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="download key"/>
+
+                <Button
+                    style="@style/leftbut"
+                    android:layout_marginTop="10dp"
+                    android:background="#00FDFD"
+                    android:id="@+id/emv_process"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClick"
+                    android:enabled="true"
+                    android:text="emvDemo"/>
+
+<!--                <Button-->
+<!--                    style="@style/leftbut"-->
+<!--                    android:id="@+id/addAid"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:onClick="onAddAid"-->
+<!--                    android:text="addAid"/>-->
+
+<!--                <Button-->
+<!--                    style="@style/leftbut"-->
+<!--                    android:id="@+id/deleAid"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:onClick="onDeleAid"-->
+<!--                    android:text="deleAid"/>-->
+
+<!--                <Button-->
+<!--                    style="@style/leftbut"-->
+<!--                    android:id="@+id/deleAllAid"-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:onClick="onDeleAllAid"-->
+<!--                    android:text="deleAllAid"/>-->
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

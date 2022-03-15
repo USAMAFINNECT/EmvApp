@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="fill_parent"
+              android:background="#FFFFFF"
+              android:orientation="horizontal" >
+
+    <include layout="@layout/left_scroll" />
+
+
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redon"
+            android:text="@string/led_red_on" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redoff"
+            android:text="@string/led_red_off" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="yellowon"
+            android:text="@string/led_yellow_on" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="yellowoff"
+            android:text="@string/led_yellow_off" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="greenon"
+            android:text="@string/led_green_on" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="greenoff"
+            android:text="@string/led_green_off" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="blueon"
+            android:text="@string/led_blue_on" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="blueoff"
+            android:text="@string/led_blue_off" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="allon"
+            android:text="@string/led_all_on" />
+
+        <Button
+            style="@style/leftbut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="alloff"
+            android:text="@string/led_all_off" />
+
+        </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>
